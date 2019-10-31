@@ -1,0 +1,31 @@
+.App {
+  display: grid;
+  grid-template-areas: "sidebar header" "sidebar main";
+  grid-template-columns: 1fr 2.3fr;
+  grid-template-rows: 120px 1fr;
+}
+
+.App__nav {
+  background-color: black;
+  color: white;
+  grid-area: sidebar;
+  overflow: auto;
+}
+
+.App__header {
+  background-color: black;
+  color: white;
+  grid-area: header;
+  padding-left: 16px;
+  padding-top: 32px;
+}
+
+.App__header a {
+  color: #bdbdbd;
+}
+
+.App__main {
+  background-color: black;
+  grid-area: main;
+  overflow: auto;
+}
