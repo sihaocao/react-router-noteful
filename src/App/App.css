@@ -3,12 +3,14 @@
   grid-template-areas: "sidebar header" "sidebar main";
   grid-template-columns: 1fr 2.3fr;
   grid-template-rows: 120px 1fr;
+  min-height: 100vh;
 }
 
 .App__nav {
   background-color: black;
   color: white;
   grid-area: sidebar;
+  height: 100vh;
   overflow: auto;
 }
 
@@ -27,5 +29,6 @@
 .App__main {
   background-color: black;
   grid-area: main;
+  height: calc(100vh - 120px);
   overflow: auto;
 }
