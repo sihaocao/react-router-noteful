@@ -11,7 +11,7 @@
 .Note__delete {
     background-color: yellow;
     border: 0;
-    color: red;
+    color: navy;
     float: right;
     font-size: 12px;
     position: relative;
@@ -31,7 +31,7 @@
 }
 
 .Note__title a {
-    color: blue;
+    color: #F6D332;
     display: block;
     text-decoration: none;
 }
