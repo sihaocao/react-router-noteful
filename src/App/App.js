@@ -9,7 +9,7 @@ import AddFolder from '../AddFolder/AddFolder'
 import AddNote from '../AddNote/AddNote'
 import ApiContext from '../ApiContext'
 import config from '../config'
-import './App.css';
+import './App.css'
 
 class App extends Component {
   state = {
@@ -27,7 +27,7 @@ class App extends Component {
           return notesRes.json().then(e => Promise.reject(e))
         if (!foldersRes.ok)
           return foldersRes.json().then(e => Promise.reject(e))
-      
+
         return Promise.all([
           notesRes.json(),
           foldersRes.json(),
@@ -40,7 +40,7 @@ class App extends Component {
         console.error({ error })
       })
   }
-  
+
   handleAddFolder = folder => {
     this.setState({
       folders: [
@@ -68,7 +68,7 @@ class App extends Component {
   renderNavRoutes() {
     return (
       <>
-        {['/', '/folder/:folderId'].map(path => 
+        {['/', '/folders/:folderId'].map(path =>
           <Route
             exact
             key={path}
@@ -76,17 +76,17 @@ class App extends Component {
             component={NoteListNav}
           />
         )}
-        <Route 
-          path='/note/:noteId'
-          component={NotePageNav} 
+        <Route
+          path='/notes/:noteId'
+          component={NotePageNav}
         />
-        <Route 
+        <Route
           path='/add-folder'
-          component={NotePageNav} 
+          component={NotePageNav}
         />
-        <Route 
+        <Route
           path='/add-note'
-          component={NotePageNav} 
+          component={NotePageNav}
         />
       </>
     )
@@ -95,7 +95,7 @@ class App extends Component {
   renderMainRoutes() {
     return (
       <>
-        {['/', '/folder/:folderId'].map(path => 
+        {['/', '/folders/:folderId'].map(path =>
           <Route
             exact
             key={path}
@@ -103,9 +103,9 @@ class App extends Component {
             component={NoteListMain}
           />
         )}
-        <Route 
-          path='/note/:noteId'
-          component={NotePageMain} 
+        <Route
+          path='/notes/:noteId'
+          component={NotePageMain}
         />
         <Route
           path='/add-folder'
@@ -136,8 +136,8 @@ class App extends Component {
           <header className='App__header'>
             <h1>
               <Link to='/'>Noteful</Link>
-              {/* {' '} */}
-              {/* <FontAwesomeIcon icon='check-double' /> */}
+              {/* {' '}
+              <FontAwesomeIcon icon='check-double' /> */}
             </h1>
           </header>
           <main className='App__main'>
