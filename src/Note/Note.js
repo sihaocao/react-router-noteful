@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { format } from 'date-fns'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ApiContext from '../ApiContext'
 import config from '../config'
@@ -60,9 +59,11 @@ export default class Note extends React.Component {
         </button>
         <div className='Note__dates'>
           <div className='Note__dates-modified'>
-            Modified
+            Modified:
             {' '}
-            <span className='Date'>{format(new Date(modified), 'yyyy-MM-dd')}</span>
+            <span className='Date'>
+              {(new Date(modified).getMonth() + 1) + '-' + new Date(modified).getDate() + '-' + new Date(modified).getFullYear()}
+            </span>
           </div>
         </div>
       </div>
